@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="10">
  <tileset firstgid="1" name="assetsMap" tilewidth="32" tileheight="32" tilecount="3264" columns="68">
-  <image source="../src/assets/assetsmap.png" width="2176" height="1536"/>
+  <image source="../assetsmap.png" width="2176" height="1536"/>
   <tile id="0">
    <properties>
     <property name="collider" type="bool" value="false"/>

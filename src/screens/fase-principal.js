@@ -15,7 +15,9 @@ export default class FasePrincipal extends Phaser.Scene
     }
       
     create ()
-    {
+    {   
+        //TALVEZ NÃO SEJA CONSTANTES POIS PODE VIR BUG AO SAIR E ENTRAR DENOVO NA SCREEN
+        
         //simplesmente inserir uma imagem já carregada, não sei porque mas se passar parametro x & y como 0, ainda aparece
         this.add.image(650, 650, "background");
         //cria um mundo tiled e passa o mapa carregado anteriormente do qual é um JSON já carregado
