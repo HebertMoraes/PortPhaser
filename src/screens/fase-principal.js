@@ -18,20 +18,20 @@ export default class FasePrincipal extends Phaser.Scene
     {   
         //TALVEZ NÃO SEJA CONSTANTES POIS PODE VIR BUG AO SAIR E ENTRAR DENOVO NA SCREEN
         
-        //simplesmente inserir uma imagem já carregada, não sei porque mas se passar parametro x & y como 0, ainda aparece
-        this.add.image(650, 650, "background");
         //cria um mundo tiled e passa o mapa carregado anteriormente do qual é um JSON já carregado
         const map = this.make.tilemap({key: "map"});
-        //insere a imagem carregada anteriormente como uma imagem que pode ser inserida no browser, e insere no lugar do assetsMap
+        //insere a imagem carregada anteriormente como uma imagem que pode ser inserida no browser, e insere no lugar do tileSet1
         //que é o nome dado ao tileSet lá no tiledMap JSON.
-        const tileset = map.addTilesetImage("assetsMap", "tiles");
-        
+        const tileSet1 = map.addTilesetImage("tileSet1", "tileSet1");
+        const tileSet2 = map.addTilesetImage("tileSet2", "tileSet2");
+
         //Carrega, cria e aparentemente desenha a layer indicada pelo nome alí no parâmetro, nome este dado lá no tiledMap,
         //imagino que para poder carregar a layer, deve-se estar carregado todos as imagens dos tiled's usados na layer, 
         //e também inserido a imagem como tileSet, como na linha acima.
-        const ground = map.createLayer("ground", tileset, 0, 0)
-        const objectCollider = map.createLayer("ObjectCollider", tileset, 0, 0)
-        const aboveCollider = map.createLayer("aboveObject", tileset, 0, 0)
+        //Pode ser que para criar uma única layer, pode-se passar vários tilesets para criar o mesmo, passando uma array de Strings
+        //com os nomes dos tiledsets usados na única layer, isso porque irei usar desta forma, e creio que funciona
+        const ground = map.createLayer("ground", [tileSet1, tileSet2], 0, 0);
+        
     }
 
     update ()

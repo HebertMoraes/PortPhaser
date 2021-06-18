@@ -1,8 +1,8 @@
 import Phaser from 'phaser';
 
-import mapJSON from '../assets/maps/map.json';
-import mapPNG from '../assets/assetsmap.png';
-import waterPNG from '../assets/water.png';
+import mapJSON from '../assets/maps/fasePrincipal.json';
+import tileSet1png from '../assets/maps/tilesSets/tileSet1.png';
+import tileSet2png from '../assets/maps/tilesSets/tileSet2.png';
 
 export default class Apresentacao extends Phaser.Scene
 {
@@ -19,11 +19,8 @@ export default class Apresentacao extends Phaser.Scene
         this.load.on('complete', () => {
             this.scene.start('CenaFasePrincipal')
         });
-
-        //carrega esta imagem
-        this.load.image("background", waterPNG);
-        this.load.image("tiles", mapPNG);
-        //carrega este arquivo JSON
+        this.load.image("tileSet1", tileSet1png);
+        this.load.image("tileSet2", tileSet2png);
         this.load.tilemapTiledJSON("map", mapJSON);
     }
       
